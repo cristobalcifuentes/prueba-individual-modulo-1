@@ -1,10 +1,11 @@
 package electrodomesticos;
 
 public class Electrodomestico {
-	protected int precioBase ;
-	protected String color;
-	protected char consumoEnergetico;
-	protected int peso ;
+	protected static int precioBase ;
+	protected static String color;
+	protected static char consumoEnergetico;
+	protected static int peso ;
+	protected static int precioFinal;
 	
 	static protected final int precioBase_def =100000 ;
 	static protected final String color_def  = "blanco";
@@ -47,7 +48,7 @@ public class Electrodomestico {
 		return consumoEnergetico;
 	}
 
-	public float getPeso() {
+	public int getPeso() {
 		return peso;
 	}
 	
@@ -84,11 +85,49 @@ public class Electrodomestico {
 			
 	}
 
-	//public static int precioFinal() {}
+	public static int aumentoPorConsumo(char letra) {
 		
+		int aumento = 0;
+		if (letra == 'A'|| letra == 'b') {
+			aumento = 100;}
+		if (letra == 'B'|| letra == 'b') {	
+			aumento = 80;}
+		if (letra == 'C'||letra == 'c') {
+			aumento = 60;}
+		if (letra == 'D'||letra =='d') {
+			aumento=50;}
+		if (letra == 'E'||letra =='e') {
+			aumento=30;}
+		if (letra == 'F'||letra =='f') {
+			aumento=10;}
+		return aumento;
+	}
+		
+	public static int aumentoPorTamanio(int tamanio) {
+		int aumento=0;
+		if (tamanio >=0 && tamanio <= 19) {
+			aumento =10;}
+		if (tamanio >=20 && tamanio <= 49) {
+			aumento =50;}
+		if (tamanio >=50 && tamanio <= 79) {
+			aumento =80;}
+		if (tamanio >=80) {
+			aumento =100;}
+		return aumento;
+	}
 	
-	
-	
-	
+	public int precioFinal(char letra, int tamanio) {
+		int precio=0;
+		precio = precioBase + aumentoPorConsumo(letra) + aumentoPorTamanio(tamanio);
+		return precio;
+	}
+
+	public int precioFinal(char letra, int tamanio, int resolucion, boolean tdt) {
+		return 0;
+	}
+
+	public int precioFinal(char letra, int tamanio, int carga) {
+		return 0;
+	}
 	
 }

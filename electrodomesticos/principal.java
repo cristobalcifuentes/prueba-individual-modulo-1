@@ -6,9 +6,11 @@ public class principal {
 		
 		Electrodomestico elec = new Electrodomestico();
 		System.out.println(elec);
-		Electrodomestico ele = new Electrodomestico(60000,"NEGRO",'A',2);
+		Electrodomestico ele = new Electrodomestico(6000,"NEGRO",'a',0);
 		System.out.println(ele);
-
+		System.out.println(elec.getConsumoEnergetico());
+		System.out.println(ele.precioFinal(ele.getConsumoEnergetico(),ele.getPeso()));
+		
 		
 
 	}
