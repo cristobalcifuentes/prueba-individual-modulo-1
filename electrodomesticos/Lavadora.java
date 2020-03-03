@@ -39,11 +39,5 @@ public class Lavadora extends Electrodomestico{
 				aumentoPorTamanio(tamanio)+ aumentoPorCarga(carga);
 		return precio;
 	}
-
-	
-	
-	
 		
 }
-
-// set guarda , get entrega
