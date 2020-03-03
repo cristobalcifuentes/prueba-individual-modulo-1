@@ -6,20 +6,36 @@ public class Lavadora extends Electrodomestico{
 	static protected final int carga_def=5;
 	
 	public Lavadora() {
-		super(precioBase, color, consumoEnergetico, peso);
-		this.carga =  carga_def;
+		precioBase = precioBase_def ;
+		color= color_def;
+		consumoEnergetico = consumoEnergetico_def ;
+		peso = peso_def;
+		carga =  carga_def;
 	}
 
 	public Lavadora(int precioBase, int peso) {
-		super(precioBase, color, consumoEnergetico, peso);
-		this.carga = carga_def;
+		this.precioBase = precioBase ; 
+		color = color_def;
+		consumoEnergetico=consumoEnergetico_def;
+		this.peso = peso;
+		carga = carga_def;
 	}
 
 	public Lavadora( int carga) {
-		super(precioBase, color, consumoEnergetico, peso);
+		precioBase = precioBase_def ;
+		color= color_def;
+		consumoEnergetico = consumoEnergetico_def ;
+		peso = peso_def;
 		this.carga = carga;
 	}
+
 		
+	@Override
+	public String toString() {
+		return "Lavadora (carga=" + carga + ", precioBase=" + precioBase + ", color=" + color + ", consumoEnergetico="
+				+ consumoEnergetico + ", peso=" + peso +")" ;
+	}
+
 	public int getCarga() {
 		return carga;
 	}
@@ -33,9 +49,9 @@ public class Lavadora extends Electrodomestico{
 	}
 	
 	@Override
-	public int precioFinal(char letra, int tamanio, int carga) {
+	public int precioFinal(char letraConsummo, int tamanio, int carga) {
 		int precio=0;
-		precio = precioBase + aumentoPorConsumo(letra) + 
+		precio = precioBase + aumentoPorConsumo(letraConsummo) + 
 				aumentoPorTamanio(tamanio)+ aumentoPorCarga(carga);
 		return precio;
 	}

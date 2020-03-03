@@ -1,11 +1,11 @@
 package electrodomesticos;
 
 public class Electrodomestico {
-	protected static int precioBase ;
-	protected static String color;
-	protected static char consumoEnergetico;
-	protected static int peso ;
-	protected static int precioFinal;
+	protected  int precioBase ;
+	protected  String color;
+	protected  char consumoEnergetico;
+	protected  int peso ;
+	//protected  int precioFinal;
 	
 	static protected final int precioBase_def =100000 ;
 	static protected final String color_def  = "blanco";
@@ -20,8 +20,10 @@ public class Electrodomestico {
 	}
 	
 	public Electrodomestico(int precioBase, int peso){
+		this.precioBase = precioBase ; 
 		color = color_def;
 		consumoEnergetico=consumoEnergetico_def;
+		this.peso = peso;
 	}
 		
 	public Electrodomestico(int precioBase, String color, char consumoEnergetico, int peso) {
@@ -32,8 +34,8 @@ public class Electrodomestico {
 	}
 
 	public String toString() {
-		return "precioBase=" + precioBase + ", color=" + color + ", consumoEnergetico="
-				+ consumoEnergetico + ", peso=" + peso  ;
+		return "Electrodomestico (precioBase=" + precioBase + ", color=" + color + ", consumoEnergetico="
+				+ consumoEnergetico + ", peso=" + peso +")" ;
 	}
 
 	public int getPrecioBase() {
@@ -48,7 +50,7 @@ public class Electrodomestico {
 		return consumoEnergetico;
 	}
 
-	public int getPeso() {
+	public int getTamanio() {
 		return peso;
 	}
 	
@@ -116,17 +118,17 @@ public class Electrodomestico {
 		return aumento;
 	}
 	
-	public int precioFinal(char letra, int tamanio) {
+	public int precioFinal(char letraConsummo, int tamanio) {
 		int precio=0;
-		precio = precioBase + aumentoPorConsumo(letra) + aumentoPorTamanio(tamanio);
+		precio = precioBase + aumentoPorConsumo(letraConsummo) + aumentoPorTamanio(tamanio);
 		return precio;
 	}
 
-	public int precioFinal(char letra, int tamanio, int resolucion, boolean tdt) {
+	public double precioFinal(char letraConsummo, int tamanio, int resolucion, boolean tdt) {
 		return 0;
 	}
 
-	public int precioFinal(char letra, int tamanio, int carga) {
+	public int precioFinal(char letraConsummo, int tamanio, int carga) {
 		return 0;
 	}
 	
