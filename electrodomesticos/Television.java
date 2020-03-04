@@ -64,10 +64,9 @@ public class Television extends Electrodomestico {
 	}
 	
 	@Override
-	public double precioFinal(char letraConsummo, int tamanio, int resolucion, boolean tdt) {
-		double precio=0;
-		precio =( precioBase + aumentoPorConsumo(letraConsummo) + aumentoPorTamanio(tamanio)+
-				 aumentoPorTDT(tdt))*aumentoPorResolucion(resolucion);
+	public int precioFinal(char letraConsummo, int tamanio, int resolucion, boolean tdt) {
+		int precio=(int)(( precioBase + aumentoPorConsumo(letraConsummo) + aumentoPorTamanio(tamanio)+
+				 aumentoPorTDT(tdt))*aumentoPorResolucion(resolucion));
 		return precio;
 	}
 

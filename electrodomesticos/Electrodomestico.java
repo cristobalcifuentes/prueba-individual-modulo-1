@@ -124,7 +124,7 @@ public class Electrodomestico {
 		return precio;
 	}
 
-	public double precioFinal(char letraConsummo, int tamanio, int resolucion, boolean tdt) {
+	public int precioFinal(char letraConsummo, int tamanio, int resolucion, boolean tdt) {
 		return 0;
 	}
 

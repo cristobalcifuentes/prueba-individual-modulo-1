@@ -4,6 +4,8 @@ public class principal {
 
 	public static void main(String[] args) {
 		
+		int suma =0;
+		
 		Electrodomestico a = new Electrodomestico ();
 		System.out.println(a);
 		System.out.println(a.precioFinal(a.getConsumoEnergetico(), a.getTamanio()));
@@ -15,9 +17,6 @@ public class principal {
 		Electrodomestico c = new Electrodomestico (40000, "negro", 'b', 70);
 		System.out.println(c);
 		System.out.println(c.precioFinal(c.getConsumoEnergetico(), c.getTamanio()));
-		
-		//System.out.println(a);
-		//System.out.println(a.precioFinal(a.getConsumoEnergetico(), a.getTamanio()));
 		
 		Lavadora d = new Lavadora ();
 		System.out.println(d);
@@ -46,6 +45,35 @@ public class principal {
 		Television j = new Television (30 , true);
 		System.out.println(j);
 		System.out.println(j.precioFinal(j.getConsumoEnergetico(), j.getTamanio(), j.getResolucion(), j.getTdt()));
+		
+		Electrodomestico [] electrodomesticos = new Electrodomestico[10];
+		electrodomesticos[0] = new Electrodomestico ();
+		electrodomesticos[1] = new Electrodomestico (60000, 81);
+		electrodomesticos[2] = new Electrodomestico (40000, "negro", 'b', 70);
+		electrodomesticos[3] = new Lavadora ();
+		electrodomesticos[4] = new Lavadora (50000,50);
+		electrodomesticos[5] = new Lavadora (50);
+		electrodomesticos[6] = new Television();
+		electrodomesticos[7] = new Television(20000, 50);
+		electrodomesticos[8] = new Television(70, true);
+		electrodomesticos[9] = new Television (30 , true);
+		
+		for (int l =0; l>electrodomesticos.length; l++) {
+			electrodomesticos[i].pre
+			
+		}
+			
+			
+			
+			
+			
+		
+		
+		
+		
+		
+		
+		
 		
 
 		
