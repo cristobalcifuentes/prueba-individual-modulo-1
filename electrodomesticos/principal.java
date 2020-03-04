@@ -58,10 +58,23 @@ public class principal {
 		electrodomesticos[8] = new Television(70, true);
 		electrodomesticos[9] = new Television (30 , true);
 		
-		for (int l =0; l>electrodomesticos.length; l++) {
-			electrodomesticos[i].pre
+		for (int l =0; l<electrodomesticos.length; l++) {
+			if (electrodomesticos[l] instanceof Electrodomestico) {
+				suma = suma +electrodomesticos[l].precioFinal(electrodomesticos[l].getConsumoEnergetico(), electrodomesticos[l].getTamanio());
+			}else if (electrodomesticos[l] instanceof Lavadora) {
+				suma = suma + electrodomesticos[l].precioFinal(electrodomesticos[l].getConsumoEnergetico(), electrodomesticos[l].getTamanio(),
+						((Lavadora) electrodomesticos[l]).getCarga());			
+			}else if (electrodomesticos[l] instanceof Television) {
+				suma = suma + electrodomesticos[l].precioFinal(electrodomesticos[l].getConsumoEnergetico(), electrodomesticos[l].getTamanio(),
+						((Television)electrodomesticos[l].getResolucion), ((Television)electrodomesticos[l].getTdt))    
+			}
+			
 			
 		}
+			System.out.println(suma);
+			
+			
+			
 			
 			
 			
