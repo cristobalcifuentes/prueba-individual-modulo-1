@@ -48,11 +48,10 @@ public class Lavadora extends Electrodomestico{
 		return precio;
 	}
 	
-	@Override
-	public int precioFinal(char letraConsummo, int tamanio, int carga) {
+	public int precioFinal() {
 		int precio=0;
-		precio = precioBase + aumentoPorConsumo(letraConsummo) + 
-				aumentoPorTamanio(tamanio)+ aumentoPorCarga(carga);
+		precio = precioBase + aumentoPorConsumo(consumoEnergetico) + 
+				aumentoPorTamanio(peso)+ aumentoPorCarga(carga);
 		return precio;
 	}
 		

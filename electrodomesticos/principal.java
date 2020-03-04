@@ -4,47 +4,50 @@ public class principal {
 
 	public static void main(String[] args) {
 		
-		int suma =0;
-		
+		int sumaTotal =0;
+		int sumaElectrodomesticos=0;
+		int sumaLavadoras=0;
+		int sumaTelevision=0;
+				
 		Electrodomestico a = new Electrodomestico ();
 		System.out.println(a);
-		System.out.println(a.precioFinal(a.getConsumoEnergetico(), a.getTamanio()));
+		System.out.println(a.precioFinal());
 		
 		Electrodomestico b = new Electrodomestico (60000, 81);
 		System.out.println(b);
-		System.out.println(b.precioFinal(b.getConsumoEnergetico(), b.getTamanio()));
+		System.out.println(b.precioFinal());
 		
 		Electrodomestico c = new Electrodomestico (40000, "negro", 'b', 70);
 		System.out.println(c);
-		System.out.println(c.precioFinal(c.getConsumoEnergetico(), c.getTamanio()));
+		System.out.println(c.precioFinal());
 		
 		Lavadora d = new Lavadora ();
 		System.out.println(d);
-		System.out.println(d.precioFinal(d.getConsumoEnergetico(), d.getTamanio(), d.getCarga()));
+		System.out.println(d.precioFinal());
 		
 		Lavadora e = new Lavadora (50000,50);
 		System.out.println(e);
-		System.out.println(e.precioFinal(e.getConsumoEnergetico(), e.getTamanio(), e.getCarga()));
+		System.out.println(e.precioFinal());
 		
 		Lavadora f = new Lavadora (50);
 		System.out.println(f);
-		System.out.println(f.precioFinal(f.getConsumoEnergetico(), f.getTamanio(), f.getCarga()));
+		System.out.println(f.precioFinal());
 		
 		Television g = new Television();
 		System.out.println(g);
-		System.out.println(g.precioFinal(g.getConsumoEnergetico(), g.getTamanio(), g.getResolucion(), g.getTdt()));
+		System.out.println(g.precioFinal());
 		
 		Television h = new Television(20000, 50);
 		System.out.println(h);
-		System.out.println(h.precioFinal(h.getConsumoEnergetico(), h.getTamanio(), h.getResolucion(), h.getTdt()));
+		System.out.println(h.precioFinal());
 		
 		Television i = new Television(70, true);
 		System.out.println(i);
-		System.out.println(i.precioFinal(i.getConsumoEnergetico(), i.getTamanio(), i.getResolucion(), i.getTdt()));
+		System.out.println(i.precioFinal());
 		
 		Television j = new Television (30 , true);
 		System.out.println(j);
-		System.out.println(j.precioFinal(j.getConsumoEnergetico(), j.getTamanio(), j.getResolucion(), j.getTdt()));
+		System.out.println(j.precioFinal());
 		
 		Electrodomestico [] electrodomesticos = new Electrodomestico[10];
 		electrodomesticos[0] = new Electrodomestico ();
@@ -59,19 +62,25 @@ public class principal {
 		electrodomesticos[9] = new Television (30 , true);
 		
 		for (int l =0; l<electrodomesticos.length; l++) {
-			if (electrodomesticos[l] instanceof Electrodomestico) {
-				suma = suma +electrodomesticos[l].precioFinal(electrodomesticos[l].getConsumoEnergetico(), electrodomesticos[l].getTamanio());
-			}else if (electrodomesticos[l] instanceof Lavadora) {
-				suma = suma + electrodomesticos[l].precioFinal(electrodomesticos[l].getConsumoEnergetico(), electrodomesticos[l].getTamanio(),
-						((Lavadora) electrodomesticos[l]).getCarga());			
+			 if (electrodomesticos[l] instanceof Lavadora) {
+				sumaTotal = sumaTotal + electrodomesticos[l].precioFinal();	
+				sumaLavadoras=sumaLavadoras+electrodomesticos[l].precioFinal();	
 			}else if (electrodomesticos[l] instanceof Television) {
-				suma = suma + electrodomesticos[l].precioFinal(electrodomesticos[l].getConsumoEnergetico(), electrodomesticos[l].getTamanio(),
-						((Television)electrodomesticos[l].getResolucion), ((Television)electrodomesticos[l].getTdt))    
-			}
-			
-			
+				sumaTotal = sumaTotal + electrodomesticos[l].precioFinal();  
+				sumaTelevision=sumaTelevision+electrodomesticos[l].precioFinal();
+			}else if (electrodomesticos[l] instanceof Electrodomestico) {
+				sumaTotal = sumaTotal +electrodomesticos[l].precioFinal();
+				sumaElectrodomesticos=sumaElectrodomesticos+electrodomesticos[l].precioFinal();
+			}	
 		}
-			System.out.println(suma);
+		
+			System.out.println();
+			System.out.println("-------------------------");
+			System.out.println("la suma total es: "+sumaTotal);
+			System.out.println("la suma de los electrodomesticos es: "+sumaElectrodomesticos);
+			System.out.println("la suma de de las lavadoras es: "+sumaLavadoras);
+			System.out.println("la suma de los televisores es: "+sumaTelevision);
+			System.out.println("--------------------------");
 			
 			
 			

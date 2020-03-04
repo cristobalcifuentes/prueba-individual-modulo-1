@@ -118,18 +118,18 @@ public class Electrodomestico {
 		return aumento;
 	}
 	
-	public int precioFinal(char letraConsummo, int tamanio) {
+	public int precioFinal( ) {
 		int precio=0;
-		precio = precioBase + aumentoPorConsumo(letraConsummo) + aumentoPorTamanio(tamanio);
+		precio = precioBase + aumentoPorConsumo(consumoEnergetico) + aumentoPorTamanio(peso);
 		return precio;
 	}
 
-	public int precioFinal(char letraConsummo, int tamanio, int resolucion, boolean tdt) {
-		return 0;
-	}
+	//public int precioFinal(char letraConsummo, int tamanio, int resolucion, boolean tdt) {
+		//return 0;
+	//}
 
-	public int precioFinal(char letraConsummo, int tamanio, int carga) {
-		return 0;
-	}
+	//public int precioFinal(char letraConsummo, int tamanio, int carga) {
+		//return 0;
+	//}
 	
 }
